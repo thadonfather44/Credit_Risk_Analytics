@@ -1,0 +1,70 @@
+customer_id,customer_name,age,age_group,gender,province,annual_income,income_band,employment_type,credit_score,credit_band,loan_id,loan_type,loan_amount,interest_rate,tenure_months,disbursement_date,maturity_date,loan_status,outstanding_balance,is_default,risk_tier,loan_year,loan_quarter
+1,"Thabo Nkosi",34,26–35,Male,Gauteng,320000.00,R300k–R499k,Salaried,710,"670–739 (Good)",1,Personal,50000.00,12.50,36,2022-01-15,2025-01-15,Active,22000.00,0,LOW,2022,1
+1,"Thabo Nkosi",34,26–35,Male,Gauteng,320000.00,R300k–R499k,Salaried,710,"670–739 (Good)",51,Auto,240000.00,11.00,60,2023-06-01,2028-06-01,Active,210000.00,0,LOW,2023,2
+2,"Nomsa Dlamini",28,26–35,Female,KwaZulu-Natal,180000.00,R150k–R299k,Self-Employed,620,"580–669 (Fair)",2,Home,850000.00,9.75,240,2021-06-01,2041-06-01,Active,790000.00,0,MEDIUM,2021,2
+3,"Pieter van der Berg",45,36–45,Male,"Western Cape",580000.00,R500k+,Salaried,780,"740–799 (Very Good)",3,Auto,320000.00,11.00,60,2020-03-10,2025-03-10,Paid,0.00,0,LOW,2020,1
+3,"Pieter van der Berg",45,36–45,Male,"Western Cape",580000.00,R500k+,Salaried,780,"740–799 (Very Good)",52,Home,1600000.00,8.90,240,2022-01-15,2042-01-15,Active,1540000.00,0,LOW,2022,1
+4,"Lerato Molefe",31,26–35,Female,Gauteng,250000.00,R150k–R299k,Salaried,695,"670–739 (Good)",4,Personal,35000.00,14.00,24,2023-02-20,2025-02-20,Active,18500.00,0,LOW,2023,1
+5,"Sipho Zulu",52,46–55,Male,KwaZulu-Natal,420000.00,R300k–R499k,Self-Employed,540,"500–579 (Poor)",5,Business,200000.00,15.50,48,2021-09-05,2025-09-05,Default,165000.00,1,HIGH,2021,3
+5,"Sipho Zulu",52,46–55,Male,KwaZulu-Natal,420000.00,R300k–R499k,Self-Employed,540,"500–579 (Poor)",61,Personal,30000.00,20.00,18,2023-01-10,2024-07-10,Default,28500.00,1,HIGH,2023,1
+6,"Aisha Patel",26,26–35,Female,Gauteng,210000.00,R150k–R299k,Salaried,730,"670–739 (Good)",6,Education,45000.00,8.50,60,2022-07-01,2027-07-01,Active,32000.00,0,LOW,2022,3
+7,"Johan Botha",39,36–45,Male,"Western Cape",490000.00,R300k–R499k,Salaried,760,"740–799 (Very Good)",7,Home,1200000.00,9.25,240,2019-11-15,2039-11-15,Active,1050000.00,0,LOW,2019,4
+7,"Johan Botha",39,36–45,Male,"Western Cape",490000.00,R300k–R499k,Salaried,760,"740–799 (Very Good)",53,Personal,80000.00,12.00,36,2023-02-01,2026-02-01,Active,55000.00,0,LOW,2023,1
+8,"Zanele Sithole",23,18–25,Female,Limpopo,95000.00,"Under R150k",Salaried,580,"580–669 (Fair)",8,Personal,15000.00,18.00,12,2023-08-01,2024-08-01,Default,14200.00,1,HIGH,2023,3
+9,"Kagiso Modise",35,26–35,Male,Gauteng,310000.00,R300k–R499k,Salaried,640,"580–669 (Fair)",9,Auto,180000.00,11.50,60,2022-04-20,2027-04-20,Active,130000.00,0,MEDIUM,2022,2
+10,"Fatima Khan",41,36–45,Female,"Western Cape",370000.00,R300k–R499k,Self-Employed,720,"670–739 (Good)",10,Business,350000.00,13.00,60,2021-01-10,2026-01-10,Active,210000.00,0,LOW,2021,1
+10,"Fatima Khan",41,36–45,Female,"Western Cape",370000.00,R300k–R499k,Self-Employed,720,"670–739 (Good)",54,Personal,60000.00,13.50,24,2023-07-01,2025-07-01,Active,38000.00,0,LOW,2023,3
+11,"Bongani Cele",29,26–35,Male,KwaZulu-Natal,160000.00,R150k–R299k,Salaried,510,"500–579 (Poor)",11,Personal,25000.00,19.50,18,2023-03-15,2024-09-15,Default,22000.00,1,HIGH,2023,1
+11,"Bongani Cele",29,26–35,Male,KwaZulu-Natal,160000.00,R150k–R299k,Salaried,510,"500–579 (Poor)",62,Auto,95000.00,15.00,36,2022-09-01,2025-09-01,Default,78000.00,1,HIGH,2022,3
+12,"Rethabile Mokoena",47,46–55,Female,Gauteng,550000.00,R500k+,Salaried,810,"800–850 (Exceptional)",12,Home,2100000.00,8.75,300,2018-05-01,2043-05-01,Active,1850000.00,0,LOW,2018,2
+12,"Rethabile Mokoena",47,46–55,Female,Gauteng,550000.00,R500k+,Salaried,810,"800–850 (Exceptional)",55,Auto,680000.00,10.00,72,2022-05-01,2028-05-01,Active,510000.00,0,LOW,2022,2
+13,"Heinrich Louw",33,26–35,Male,"Western Cape",440000.00,R300k–R499k,Salaried,755,"740–799 (Very Good)",13,Auto,450000.00,10.50,72,2020-07-22,2026-07-22,Active,280000.00,0,LOW,2020,3
+14,"Ntombizodwa Mthembu",55,46–55,Female,KwaZulu-Natal,230000.00,R150k–R299k,Retired,600,"580–669 (Fair)",14,Personal,30000.00,16.00,24,2022-11-01,2024-11-01,Paid,0.00,0,MEDIUM,2022,4
+15,"Deon Jacobs",38,36–45,Male,Gauteng,360000.00,R300k–R499k,Salaried,670,"670–739 (Good)",15,Home,950000.00,9.50,240,2021-03-10,2041-03-10,Active,890000.00,0,LOW,2021,1
+15,"Deon Jacobs",38,36–45,Male,Gauteng,360000.00,R300k–R499k,Salaried,670,"670–739 (Good)",56,Personal,45000.00,13.00,36,2023-01-01,2026-01-01,Active,30000.00,0,LOW,2023,1
+16,"Priya Naidoo",30,26–35,Female,KwaZulu-Natal,280000.00,R150k–R299k,Salaried,690,"670–739 (Good)",16,Education,65000.00,8.00,84,2022-09-01,2029-09-01,Active,52000.00,0,LOW,2022,3
+17,"Lungelo Xulu",22,18–25,Male,KwaZulu-Natal,85000.00,"Under R150k",Salaried,490,"300–499 (Very Poor)",17,Personal,20000.00,20.00,12,2023-06-01,2024-06-01,Default,19500.00,1,CRITICAL,2023,2
+17,"Lungelo Xulu",22,18–25,Male,KwaZulu-Natal,85000.00,"Under R150k",Salaried,490,"300–499 (Very Poor)",63,Business,55000.00,21.00,24,2022-10-01,2024-10-01,Default,50000.00,1,CRITICAL,2022,4
+18,"Melissa Fourie",44,36–45,Female,Gauteng,510000.00,R500k+,Self-Employed,740,"740–799 (Very Good)",18,Business,500000.00,12.00,60,2020-08-15,2025-08-15,Active,195000.00,0,LOW,2020,3
+18,"Melissa Fourie",44,36–45,Female,Gauteng,510000.00,R500k+,Self-Employed,740,"740–799 (Very Good)",57,Auto,390000.00,11.50,60,2022-11-15,2027-11-15,Active,295000.00,0,LOW,2022,4
+19,"Andile Mabaso",27,26–35,Male,Limpopo,140000.00,"Under R150k",Salaried,560,"500–579 (Poor)",19,Personal,18000.00,17.50,18,2023-01-20,2024-07-20,Default,15000.00,1,HIGH,2023,1
+20,"Chante du Plessis",36,36–45,Female,"Western Cape",390000.00,R300k–R499k,Salaried,775,"740–799 (Very Good)",20,Home,1450000.00,9.00,300,2019-06-01,2044-06-01,Active,1320000.00,0,LOW,2019,2
+20,"Chante du Plessis",36,36–45,Female,"Western Cape",390000.00,R300k–R499k,Salaried,775,"740–799 (Very Good)",58,Personal,55000.00,12.50,24,2023-03-15,2025-03-15,Active,28000.00,0,LOW,2023,1
+21,"Sifiso Shabalala",48,46–55,Male,KwaZulu-Natal,200000.00,R150k–R299k,Self-Employed,530,"500–579 (Poor)",21,Auto,140000.00,12.50,48,2022-02-14,2026-02-14,Default,98000.00,1,HIGH,2022,1
+22,"Nosipho Nzama",25,18–25,Female,Gauteng,175000.00,R150k–R299k,Salaried,615,"580–669 (Fair)",22,Personal,28000.00,15.50,24,2023-04-01,2025-04-01,Active,16000.00,0,MEDIUM,2023,2
+23,"Riaan Smit",43,36–45,Male,"Western Cape",460000.00,R300k–R499k,Salaried,800,"800–850 (Exceptional)",23,Home,1750000.00,8.50,240,2020-01-07,2040-01-07,Active,1580000.00,0,LOW,2020,1
+23,"Riaan Smit",43,36–45,Male,"Western Cape",460000.00,R300k–R499k,Salaried,800,"800–850 (Exceptional)",59,Business,900000.00,11.00,84,2020-06-01,2027-06-01,Active,540000.00,0,LOW,2020,2
+24,"Ayanda Buthelezi",32,26–35,Female,KwaZulu-Natal,220000.00,R150k–R299k,Salaried,655,"580–669 (Fair)",24,Education,55000.00,8.25,72,2022-10-15,2028-10-15,Active,44000.00,0,MEDIUM,2022,4
+25,"Trevor Williams",50,46–55,Male,Gauteng,620000.00,R500k+,Self-Employed,720,"670–739 (Good)",25,Business,750000.00,11.50,84,2019-04-01,2026-04-01,Active,380000.00,0,LOW,2019,2
+25,"Trevor Williams",50,46–55,Male,Gauteng,620000.00,R500k+,Self-Employed,720,"670–739 (Good)",60,Personal,100000.00,12.00,48,2022-08-01,2026-08-01,Active,62000.00,0,LOW,2022,3
+26,"Lindiwe Ntuli",29,26–35,Female,Limpopo,110000.00,"Under R150k",Salaried,545,"500–579 (Poor)",26,Personal,12000.00,19.00,12,2023-07-01,2024-07-01,Default,11200.00,1,HIGH,2023,3
+26,"Lindiwe Ntuli",29,26–35,Female,Limpopo,110000.00,"Under R150k",Salaried,545,"500–579 (Poor)",64,Auto,80000.00,16.50,36,2022-05-01,2025-05-01,Default,68000.00,1,HIGH,2022,2
+27,"Marco de Villiers",37,36–45,Male,"Western Cape",480000.00,R300k–R499k,Salaried,770,"740–799 (Very Good)",27,Auto,390000.00,10.00,60,2021-05-20,2026-05-20,Active,240000.00,0,LOW,2021,2
+28,"Sthembile Dube",26,26–35,Male,KwaZulu-Natal,130000.00,"Under R150k",Salaried,500,"500–579 (Poor)",28,Personal,22000.00,21.00,18,2023-02-01,2024-08-01,Default,20000.00,1,HIGH,2023,1
+28,"Sthembile Dube",26,26–35,Male,KwaZulu-Natal,130000.00,"Under R150k",Salaried,500,"500–579 (Poor)",65,Personal,15000.00,22.50,12,2023-03-01,2024-03-01,Default,14200.00,1,HIGH,2023,1
+29,"Karabo Motsepe",53,46–55,Female,Gauteng,480000.00,R300k–R499k,Retired,790,"740–799 (Very Good)",29,Home,1800000.00,8.75,300,2017-09-01,2042-09-01,Paid,0.00,0,LOW,2017,3
+30,"Noluthando Mhlongo",34,26–35,Female,Limpopo,165000.00,R150k–R299k,Self-Employed,575,"500–579 (Poor)",30,Personal,16000.00,17.00,12,2023-05-15,2024-05-15,Default,14500.00,1,HIGH,2023,2
+30,"Noluthando Mhlongo",34,26–35,Female,Limpopo,165000.00,R150k–R299k,Self-Employed,575,"500–579 (Poor)",66,Auto,110000.00,17.00,36,2022-11-01,2025-11-01,Default,95000.00,1,HIGH,2022,4
+31,"Gerhard Venter",40,36–45,Male,"Western Cape",530000.00,R500k+,Salaried,745,"740–799 (Very Good)",31,Auto,410000.00,10.75,60,2021-11-01,2026-11-01,Active,270000.00,0,LOW,2021,4
+32,"Katlego Sebone",28,26–35,Male,Gauteng,195000.00,R150k–R299k,Salaried,630,"580–669 (Fair)",32,Personal,32000.00,14.50,24,2022-12-01,2024-12-01,Active,15000.00,0,MEDIUM,2022,4
+33,"Samantha Ellis",35,26–35,Female,"Western Cape",340000.00,R300k–R499k,Salaried,715,"670–739 (Good)",33,Home,1100000.00,9.25,240,2020-02-14,2040-02-14,Active,950000.00,0,LOW,2020,1
+34,"Musa Mthethwa",42,36–45,Male,KwaZulu-Natal,260000.00,R150k–R299k,Self-Employed,555,"500–579 (Poor)",34,Business,180000.00,14.50,36,2022-06-01,2025-06-01,Default,145000.00,1,HIGH,2022,2
+35,"Palesa Molete",24,18–25,Female,Gauteng,120000.00,"Under R150k",Salaried,595,"580–669 (Fair)",35,Personal,14000.00,18.50,12,2023-08-15,2024-08-15,Active,8500.00,0,HIGH,2023,3
+36,"Nico Kotze",58,56+,Male,"Western Cape",700000.00,R500k+,Retired,820,"800–850 (Exceptional)",36,Home,2500000.00,8.25,300,2016-03-01,2041-03-01,Active,1900000.00,0,LOW,2016,1
+37,"Fikile Majola",31,26–35,Female,KwaZulu-Natal,175000.00,R150k–R299k,Salaried,605,"580–669 (Fair)",37,Personal,24000.00,16.50,18,2023-01-10,2024-07-10,Paid,0.00,0,MEDIUM,2023,1
+38,"Dawie Steyn",46,46–55,Male,Gauteng,415000.00,R300k–R499k,Salaried,735,"670–739 (Good)",38,Auto,360000.00,11.00,60,2021-07-15,2026-07-15,Active,210000.00,0,LOW,2021,3
+39,"Nonkululeko Msweli",27,26–35,Female,Limpopo,100000.00,"Under R150k",Salaried,520,"500–579 (Poor)",39,Personal,10000.00,22.00,12,2023-09-01,2024-09-01,Default,9800.00,1,HIGH,2023,3
+39,"Nonkululeko Msweli",27,26–35,Female,Limpopo,100000.00,"Under R150k",Salaried,520,"500–579 (Poor)",67,Personal,12000.00,21.50,12,2023-10-01,2024-10-01,Default,11500.00,1,HIGH,2023,4
+40,"Ahmed Asmal",39,36–45,Male,"Western Cape",350000.00,R300k–R499k,Self-Employed,680,"670–739 (Good)",40,Business,280000.00,12.50,48,2022-03-01,2026-03-01,Active,180000.00,0,LOW,2022,1
+41,"Zandiwe Nxumalo",33,26–35,Female,KwaZulu-Natal,215000.00,R150k–R299k,Salaried,640,"580–669 (Fair)",41,Personal,27000.00,15.00,24,2023-03-20,2025-03-20,Active,14500.00,0,MEDIUM,2023,1
+42,"Francois Rousseau",51,46–55,Male,Gauteng,590000.00,R500k+,Salaried,795,"740–799 (Very Good)",42,Home,1650000.00,9.00,240,2020-10-01,2040-10-01,Active,1480000.00,0,LOW,2020,4
+43,"Nokwanda Ngubane",22,18–25,Female,KwaZulu-Natal,80000.00,"Under R150k",Salaried,470,"300–499 (Very Poor)",43,Personal,8000.00,23.00,6,2024-01-01,2024-07-01,Default,7900.00,1,CRITICAL,2024,1
+43,"Nokwanda Ngubane",22,18–25,Female,KwaZulu-Natal,80000.00,"Under R150k",Salaried,470,"300–499 (Very Poor)",68,Business,40000.00,24.00,18,2023-05-01,2024-11-01,Default,38000.00,1,CRITICAL,2023,2
+44,"Sizwe Madlala",36,36–45,Male,Limpopo,155000.00,R150k–R299k,Self-Employed,565,"500–579 (Poor)",44,Auto,100000.00,13.50,36,2022-08-01,2025-08-01,Default,72000.00,1,HIGH,2022,3
+45,"Ingrid Nel",48,46–55,Female,"Western Cape",455000.00,R300k–R499k,Salaried,760,"740–799 (Very Good)",45,Home,1380000.00,9.25,240,2021-04-15,2041-04-15,Active,1240000.00,0,LOW,2021,2
+46,"Mthokozisi Mkhize",30,26–35,Male,KwaZulu-Natal,190000.00,R150k–R299k,Salaried,620,"580–669 (Fair)",46,Personal,30000.00,14.00,24,2023-05-01,2025-05-01,Active,17000.00,0,MEDIUM,2023,2
+47,"Nthabiseng Letsie",25,18–25,Female,Gauteng,145000.00,"Under R150k",Salaried,580,"580–669 (Fair)",47,Education,40000.00,8.75,60,2023-01-15,2028-01-15,Active,34000.00,0,HIGH,2023,1
+48,"Renier Erasmus",44,36–45,Male,"Western Cape",520000.00,R500k+,Salaried,750,"740–799 (Very Good)",48,Auto,420000.00,10.25,60,2021-09-10,2026-09-10,Active,265000.00,0,LOW,2021,3
+49,"Busisiwe Nkosi",37,36–45,Female,Gauteng,295000.00,R150k–R299k,Self-Employed,660,"580–669 (Fair)",49,Business,220000.00,13.50,48,2022-07-01,2026-07-01,Active,140000.00,0,MEDIUM,2022,3
+50,"Lwandile Zulu",29,26–35,Male,KwaZulu-Natal,125000.00,"Under R150k",Salaried,505,"500–579 (Poor)",50,Personal,19000.00,18.00,18,2023-04-20,2024-10-20,Default,17200.00,1,HIGH,2023,2
+50,"Lwandile Zulu",29,26–35,Male,KwaZulu-Natal,125000.00,"Under R150k",Salaried,505,"500–579 (Poor)",69,Home,450000.00,13.00,120,2022-04-01,2032-04-01,"Under Review",430000.00,0,HIGH,2022,2
