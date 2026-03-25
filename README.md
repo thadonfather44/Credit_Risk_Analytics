@@ -21,32 +21,6 @@ Interactive dashboard development
 
 DAX
 Calculated measures and KPIs
-
-Project Structure
-banking-risk-loan-performance/
-│
-├── README.md
-│
-├── database/
-│   ├── 01_schema_and_data.sql
-│   └── 02_analytical_queries.sql
-│
-├── dashboard/
-│   ├── banking_risk_dashboard.pbix
-│   └── banking_risk_preview.html
-│
-├── screenshots/
-│   ├── 01_executive_summary.png
-│   ├── 02_risk_analysis.png
-│   ├── 03_customer_segments.png
-│   └── 04_watchlist.png
-│
-├── docs/
-│   ├── data_dictionary.md
-│   └── business_requirements.md
-│
-└── exports/
-    └── tableau_master.csv
     
 Database Design
 Three normalised tables with primary and foreign key constraints reflecting how retail banking systems store transactional data in production environments.
