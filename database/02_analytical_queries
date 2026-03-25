@@ -1,0 +1,241 @@
+USE banking_risk_db;
+
+SELECT
+    COUNT(DISTINCT l.loan_id)                                           AS total_loans,
+    COUNT(DISTINCT l.customer_id)                                       AS total_customers,
+    SUM(l.loan_amount)                                                  AS total_loan_amount,
+    SUM(l.outstanding_balance)                                          AS total_exposure,
+    ROUND(AVG(l.interest_rate), 2)                                      AS avg_interest_rate,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)         AS total_defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                                                   AS default_rate_pct,
+    SUM(CASE WHEN l.loan_status = 'Active'       THEN 1 ELSE 0 END)    AS active_loans,
+    SUM(CASE WHEN l.loan_status = 'Paid'         THEN 1 ELSE 0 END)    AS paid_loans,
+    SUM(CASE WHEN l.loan_status = 'Under Review' THEN 1 ELSE 0 END)    AS under_review_loans
+FROM loans l;
+
+SELECT
+    loan_status,
+    COUNT(*)                                            AS loan_count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS pct_of_total,
+    SUM(loan_amount)                                   AS total_amount,
+    SUM(outstanding_balance)                           AS total_outstanding
+FROM loans
+GROUP BY loan_status
+ORDER BY loan_count DESC;
+
+SELECT
+    CASE
+        WHEN c.credit_score BETWEEN 300 AND 499 THEN '300–499 (Very Poor)'
+        WHEN c.credit_score BETWEEN 500 AND 579 THEN '500–579 (Poor)'
+        WHEN c.credit_score BETWEEN 580 AND 669 THEN '580–669 (Fair)'
+        WHEN c.credit_score BETWEEN 670 AND 739 THEN '670–739 (Good)'
+        WHEN c.credit_score BETWEEN 740 AND 799 THEN '740–799 (Very Good)'
+        WHEN c.credit_score >= 800              THEN '800–850 (Exceptional)'
+    END                                                              AS credit_band,
+    COUNT(l.loan_id)                                                 AS total_loans,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)      AS defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                                                AS default_rate_pct,
+    ROUND(AVG(l.interest_rate), 2)                                   AS avg_interest_rate,
+    SUM(l.outstanding_balance)                                       AS total_exposure
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+GROUP BY credit_band
+ORDER BY MIN(c.credit_score);
+
+SELECT
+    c.province,
+    COUNT(DISTINCT c.customer_id)                                     AS customer_count,
+    COUNT(l.loan_id)                                                  AS loan_count,
+    SUM(l.loan_amount)                                                AS total_loans_issued,
+    SUM(l.outstanding_balance)                                        AS total_exposure,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)       AS defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                                                 AS default_rate_pct,
+    ROUND(AVG(c.annual_income), 0)                                    AS avg_customer_income,
+    ROUND(AVG(c.credit_score), 0)                                     AS avg_credit_score
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+GROUP BY c.province
+ORDER BY total_loans_issued DESC;
+
+SELECT
+    CASE
+        WHEN c.age BETWEEN 18 AND 25 THEN '18–25'
+        WHEN c.age BETWEEN 26 AND 35 THEN '26–35'
+        WHEN c.age BETWEEN 36 AND 45 THEN '36–45'
+        WHEN c.age BETWEEN 46 AND 55 THEN '46–55'
+        ELSE '56+'
+    END                                                               AS age_group,
+    COUNT(DISTINCT c.customer_id)                                     AS customers,
+    COUNT(l.loan_id)                                                  AS loans,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)       AS defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                                                 AS default_rate_pct,
+    ROUND(AVG(c.annual_income), 0)                                    AS avg_income,
+    ROUND(AVG(c.credit_score), 0)                                     AS avg_credit_score,
+    ROUND(AVG(l.loan_amount), 0)                                      AS avg_loan_amount
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+GROUP BY age_group
+ORDER BY MIN(c.age);
+
+SELECT
+    l.loan_type,
+    COUNT(*)                                                          AS total_loans,
+    SUM(l.loan_amount)                                               AS total_disbursed,
+    SUM(l.outstanding_balance)                                       AS total_outstanding,
+    ROUND(AVG(l.interest_rate), 2)                                   AS avg_rate,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)      AS defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(*), 2
+    )                                                                AS default_rate_pct,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN l.outstanding_balance ELSE 0 END)
+                                                                     AS default_exposure
+FROM loans l
+GROUP BY l.loan_type
+ORDER BY total_disbursed DESC;
+
+SELECT
+    c.employment_type,
+    COUNT(DISTINCT c.customer_id)                                     AS customers,
+    COUNT(l.loan_id)                                                  AS loans,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)       AS defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                                                 AS default_rate_pct,
+    ROUND(AVG(c.annual_income), 0)                                    AS avg_income,
+    ROUND(AVG(c.credit_score), 0)                                     AS avg_credit_score
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+GROUP BY c.employment_type
+ORDER BY default_rate_pct DESC;
+
+SELECT
+    CASE
+        WHEN c.annual_income < 150000  THEN 'Under R150k'
+        WHEN c.annual_income < 300000  THEN 'R150k–R299k'
+        WHEN c.annual_income < 500000  THEN 'R300k–R499k'
+        ELSE 'R500k+'
+    END                                                               AS income_band,
+    COUNT(DISTINCT c.customer_id)                                     AS customers,
+    COUNT(l.loan_id)                                                  AS loans,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END)       AS defaults,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                                                 AS default_rate_pct,
+    ROUND(AVG(l.loan_amount), 0)                                      AS avg_loan_amount,
+    ROUND(AVG(c.credit_score), 0)                                     AS avg_credit_score
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+GROUP BY income_band
+ORDER BY MIN(c.annual_income);
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name)         AS customer_name,
+    c.province,
+    c.age,
+    c.employment_type,
+    c.annual_income,
+    c.credit_score,
+    COUNT(l.loan_id)                               AS total_loans,
+    SUM(l.outstanding_balance)                     AS total_exposure,
+    SUM(CASE WHEN l.loan_status = 'Default' THEN l.outstanding_balance ELSE 0 END)
+                                                   AS defaulted_exposure,
+    ROUND(
+        SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(l.loan_id), 2
+    )                                              AS personal_default_rate,
+    CASE
+        WHEN c.credit_score < 500 AND
+             SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) > 0
+                                                   THEN 'CRITICAL'
+        WHEN c.credit_score < 600 OR
+             SUM(CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END) > 0
+                                                   THEN 'HIGH'
+        WHEN c.credit_score < 670                  THEN 'MEDIUM'
+        ELSE 'LOW'
+    END                                            AS risk_tier
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name,
+         c.province, c.age, c.employment_type,
+         c.annual_income, c.credit_score
+HAVING risk_tier IN ('CRITICAL', 'HIGH')
+ORDER BY defaulted_exposure DESC
+LIMIT 20;
+
+SELECT
+    lp.payment_status,
+    COUNT(*)                                                AS payment_count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2)     AS pct_of_payments,
+    ROUND(AVG(lp.amount_paid), 2)                          AS avg_payment_amount,
+    COUNT(DISTINCT lp.loan_id)                             AS distinct_loans
+FROM loan_payments lp
+GROUP BY lp.payment_status;
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name)         AS customer_name,
+    c.age,
+    CASE
+        WHEN c.age BETWEEN 18 AND 25 THEN '18–25'
+        WHEN c.age BETWEEN 26 AND 35 THEN '26–35'
+        WHEN c.age BETWEEN 36 AND 45 THEN '36–45'
+        WHEN c.age BETWEEN 46 AND 55 THEN '46–55'
+        ELSE '56+'
+    END                                             AS age_group,
+    c.gender,
+    c.province,
+    c.annual_income,
+    CASE
+        WHEN c.annual_income < 150000  THEN 'Under R150k'
+        WHEN c.annual_income < 300000  THEN 'R150k–R299k'
+        WHEN c.annual_income < 500000  THEN 'R300k–R499k'
+        ELSE 'R500k+'
+    END                                             AS income_band,
+    c.employment_type,
+    c.credit_score,
+    CASE
+        WHEN c.credit_score BETWEEN 300 AND 499 THEN '300–499 (Very Poor)'
+        WHEN c.credit_score BETWEEN 500 AND 579 THEN '500–579 (Poor)'
+        WHEN c.credit_score BETWEEN 580 AND 669 THEN '580–669 (Fair)'
+        WHEN c.credit_score BETWEEN 670 AND 739 THEN '670–739 (Good)'
+        WHEN c.credit_score BETWEEN 740 AND 799 THEN '740–799 (Very Good)'
+        WHEN c.credit_score >= 800              THEN '800–850 (Exceptional)'
+    END                                             AS credit_band,
+    l.loan_id,
+    l.loan_type,
+    l.loan_amount,
+    l.interest_rate,
+    l.tenure_months,
+    l.disbursement_date,
+    l.maturity_date,
+    l.loan_status,
+    l.outstanding_balance,
+    CASE WHEN l.loan_status = 'Default' THEN 1 ELSE 0 END  AS is_default,
+    CASE
+        WHEN c.credit_score < 500 THEN 'CRITICAL'
+        WHEN c.credit_score < 600 THEN 'HIGH'
+        WHEN c.credit_score < 670 THEN 'MEDIUM'
+        ELSE 'LOW'
+    END                                             AS risk_tier,
+    YEAR(l.disbursement_date)                       AS loan_year,
+    QUARTER(l.disbursement_date)                    AS loan_quarter
+FROM customers c
+JOIN loans l ON c.customer_id = l.customer_id
+ORDER BY c.customer_id, l.loan_id;
+
